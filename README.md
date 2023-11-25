@@ -1,4 +1,13 @@
 # Kaseer-WebApp-Demo.
+<hr>
+
+> :warning: **Disclaimer:** Aplikasi Kaseer Web ini hanya demo saja.
+
+### Preview Kaseer
+
+![Kasir Page](./cover-image.jpg "Kasir Page")
+
+![Management Produk](./cover-image2.jpg "Management Produk")
 
 ##### Tools & Teknologi yang dipakai
 - MYSQL
