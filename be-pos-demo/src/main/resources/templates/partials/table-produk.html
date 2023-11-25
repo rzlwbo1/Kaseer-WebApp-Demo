@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+  <section id="produk-manage" class="row align-items-start justify-content-between ps-3 pe-0">
+    <div class="col-lg-9 p-2" th:fragment="table-produk">
+      <div class="card card-table border-0">
+        <div class="card-body">
+          <table class="table table-borderless table-produk table-sm">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Gambar</th>
+                <th>Nama Produk</th>
+                <th>Deskripsi</th>
+                <th>Stok</th>
+                <th>Kategori</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr th:each="produk, iStat : ${products}" class="p-2">
+                <th th:text="${iStat.index + 1}" style="width: 5%;"></th>
+                <td style="width: 14%;" class="py-2">
+                  <img th:src="@{/image/} + ${produk?.pathGambar}" th:alt="${produk?.pathGambar}" width="100" class="img-fluid rounded">
+                </td>
+                <td th:text="${produk?.name}" style="width: 20%;"></td>
+                <td th:text="${produk?.description}" style="width: 31%;"></td>
+                <td th:text="${produk?.stok}" style="width: 8%;"></td>
+                <td th:text="${produk?.category?.name}" style="width: 10%;"></td>
+                <td style="width: 10%;">
+                  <div class="btn-actions">
+                    <button class="btn btn-warning btn-sm" th:onclick="editProduk(this, [[${produk?.idProduk}]])">
+                      <img th:src="@{assets/icons/ico-pencil-7ecdd6fb.svg}" alt="icon-pencil" width="17">
+                    </button>
+                    <button class="btn btn-danger btn-sm" th:onclick="deleteProduk([[${produk?.idProduk}]])">
+                      <img th:src="@{assets/icons/ico-trash-bf4793ac.svg}" alt="icon-trash" width="17">
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+</body>
+</html>

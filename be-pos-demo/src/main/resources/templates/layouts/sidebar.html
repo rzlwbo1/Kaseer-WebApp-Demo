@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <aside id="sidebar" class="bg-blue d-flex flex-column justify-content-between align-items-center py-5"
+         th:fragment="sidebar">
+  <div>
+    <img th:src="@{assets/icons/Logos-a5ac9e42.svg}" alt="Logo" class="img-fluid">
+  </div>
+
+  <div class="menus-vertical">
+    <img th:src="@{assets/icons/house-41158c88.svg}" alt="home" class="img-fluid">
+    <a class="text-reset text-decoration-none" th:href="@{/}">
+      <img th:src="@{assets/icons/grid-b5d3aa56.svg}" alt="grid" class="img-fluid">
+    </a>
+    <a class="text-reset text-decoration-none" th:href="@{/manage-produk}">
+      <img th:src="@{assets/icons/boxes-df71a249.svg}" alt="boxes" class="img-fluid">
+    </a>
+    <img th:src="@{assets/icons/history-e41583d2.svg}" alt="history" class="img-fluid">
+  </div>
+
+  <div class="menus-vertical-down">
+    <img th:src="@{assets/icons/exit-d48cfc76.svg}" alt="exit" class="img-fluid">
+    <img th:src="@{assets/icons/info-f52ae334.svg}" alt="info" class="img-fluid">
+  </div>
+</aside>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <section id="content-menus" class="row row-cols-4 gy-4 align-items-start" th:fragment="content-menus">
+    <div class="col" th:each="menu : ${menus}">
+      <div class="card-produk">
+        <div class="thumbnail rounded">
+          <img th:src="@{/image/} + ${menu.pathGambar}" th:alt="${menu.pathGambar}" class="img-fluid">
+        </div>
+        <h3 class="text-dark title-card" th:text="${menu.name}"></h3>
+        <p class="text-gray mt-0" th:text="${menu.description}"></p>
+        <div class="action-card d-flex flex-wrap justify-content-between align-items-center">
+          <h5 class="text-primary fw-bold price" th:text="'Rp. ' + ${#numbers.formatDecimal(menu.price,3,'POINT',0,'COMMA')}"></h5>
+          <button class="btn btn-sm btn-add" th:onclick="toCart([[${menu.name}]], [[${menu.price}]], [[${menu.pathGambar}]])">+</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="orders-card" class="bg-white position-relative" th:fragment="orders-card">
+    <h2 class="text-dark fw-medium">Pesanan</h2>
+    <small class="text-gray">Tekan 2 kali untuk hapus order</small>
+    <div class="card-orders-container">
+
+    </div>
+
+    <div class="summary position-absolute">
+      <div class="summary-content bg-light rounded py-2">
+        <table class="table table-borderless table-light pb-3 m-0">
+          <tr>
+            <td>Subtotal</td>
+            <td class="text-end subtotal">Rp. -</td>
+          </tr>
+          <tr class="border-bottom">
+            <td>Pajak</td>
+            <td class="text-end pb-3 tax">Rp. 500</td>
+          </tr>
+
+          <tr>
+            <td class="text-dark pt-2">
+              <h5 class="fw-medium m-0">Total</h5>
+            </td>
+            <td class="text-dark text-end">
+              <h5 class="m-0 total">Rp. - </h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <button class="btn btn-primary w-100 fw-medium mt-3" data-bs-toggle="modal" data-bs-target="#modalRincian">Lanjut Bayar</button>
+    </div>
+  </section>
+
+</body>
+</html>

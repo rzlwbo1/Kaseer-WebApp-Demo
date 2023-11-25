@@ -1,0 +1,76 @@
+::-webkit-scrollbar {
+  width: .45rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(27, 27, 27, .4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+#header,
+#orders-card {
+  margin-top: 20px !important;
+}
+
+#content-menus {
+  margin-top: .6rem;
+}
+
+#content-menus .card-produk .thumbnail {
+  height: 150px;
+}
+
+#content-menus .card-produk .thumbnail img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.table-produk tr th {
+  vertical-align: baseline;
+}
+
+#orders-card .card-orders-container {
+  min-height: 43%;
+  height: 43%;
+}
+
+
+/* Style for Loader */
+.loader {
+  width: 8px;
+  height: 40px;
+  border-radius: 4px;
+  display: block;
+  margin: 20px auto;
+  position: relative;
+  background: currentColor;
+  color: #4e70e6;
+  box-sizing: border-box;
+  animation: animloader 0.3s 0.3s linear infinite alternate;
+}
+
+.loader::after, .loader::before {
+  content: '';
+  width: 8px;
+  height: 40px;
+  border-radius: 4px;
+  background: currentColor;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+  box-sizing: border-box;
+  animation: animloader 0.3s  0.45s  linear infinite alternate;
+}
+.loader::before {
+  left: -20px;
+  animation-delay: 0s;
+}
+
+@keyframes animloader {
+  0%   { height: 48px} 
+  100% { height: 4px}
+}

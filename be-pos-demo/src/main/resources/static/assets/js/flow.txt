@@ -1,0 +1,20 @@
+jadi flow nya sbb:
+
+1. ketika add to cart
+ akan membuat obj order dan di push ke orders, kemudian update dom dgn value dari parameter, parameter dari html value nya.
+
+ pas update dom cart, ada func calculateSubtotal, ini ngitungnya pake redce dgn mengambil price dari object orders.
+
+ kemudian di simpan ke global variabel SUBTOTAL_VALUE
+
+ lalu updateBill dgn mengirim SUBTOTAL_VALUE
+
+
+2. ketika addQty
+ harga pada cart akan di kali dgn harga base price, yg di dapat dari param HTML.
+
+ setelah itu kita update price dgn produk tertentu menggunakann forEach pada obj orders.
+
+ lalu panggil calculateSubtotal yg dimana di calculateSubtotal akan mengreduce price dari obj orders
+
+ lalu updateBill akan jalan kembali

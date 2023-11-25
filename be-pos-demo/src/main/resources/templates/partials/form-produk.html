@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+  <div class="col-lg-3 pe-0 pt-1" th:fragment="form-produk">
+    <div class="form-produk">
+      <div class="card border-0">
+        <div class="card-body">
+          <h4 class="card-title fw-semibold text-dark mb-0 title-form">Tambah Produk</h4>
+          <small class="card-subtitle text-secondary mb-0">Perbanyak Produk, perbanyak cuan</small>
+
+          <form th:action="@{/post-produk}" method="post" enctype="multipart/form-data" th:object="${newProduct}"  id="form-produk">
+            <div class="d-flex align-items-start flex-column gap-3">
+              <input type="hidden" th:field="*{idProduk}" id="idProduk">
+              <input type="text" class="form-control field" id="produk" placeholder="Nama Produk" th:field="*{name}">
+              <input type="file" class="form-control field" name="image" id="image">
+              <p class="d-none m-0" id="existimage"></p>
+              <textarea cols="30" rows="3" class="form-control field" placeholder="Deskripsi" id="desc" th:field="*{description}"></textarea>
+              <select class="form-select field" th:field="*{categoryName}" id="category">
+                <option th:value="none">Pilih Kategori</option>
+                <option th:each="cat : ${categories}" th:value="${cat.name}" th:text="${cat.name}"></option>
+              </select>
+              <input type="number" class="form-control field" placeholder="Stok" id="stok" th:field="*{stok}">
+              <button type="button" class="btn btn-primary fw-semibold w-100 btn-modify" th:style="'font-size: 18px;'" th:onclick="submitProduk()">Tambah</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
