@@ -14,6 +14,11 @@
 - DBeaver
 - Intelij IDEA
 - Java JDK 19
+- Spring Boot v3
+- Thyemelaf
+- Bootstrap 5
+- Jquery
+- SweetAlert
 
 <hr>
 
@@ -22,14 +27,17 @@
 2. Lakuakan restore DB <b>pos-app.sql</b> menggunakan Dbeaver <strong>(disarankan)</strong>.
 3. Open project <b>be-pos-demo</b> menggunakan Intelij IDEA atau IDE lainnya.
 4. Setting koneksi db pada file application.properties. <b>file path : be-pos-demo\src\main\resources\application.properties</b>
-  `spring.datasource.url=jdbc:mysql://localhost:3306/pos-app
-spring.datasource.username=root
-spring.datasource.password=rizal`
+  `spring.datasource.url=jdbc:mysql://localhost:3306/pos-app`
+  `spring.datasource.username=root`
+  `spring.datasource.password=rizal`
   <b>sesuaikan username dan password dari koneksi msyql nya.</b>
-5. Jika sudah melakukan semua diatas, maka jalankan aplikasi nya dngn ketik command pada terminal `mvn spring-boot:run`
-6. Ctrl + C untuk stop aplikasi.
+5. Jika sudah melakukan semua diatas, maka jalankan aplikasi nya dngn ketik command pada terminal
+   `mvn spring-boot:run`
+7. Ctrl + C untuk stop aplikasi.
 
 <hr>
+
+Feel Free untuk modfikasi seusuai kebutuhan anda. enjoyyyy 🍟
 
 ##### Find Me on
 - Instagram : @rizalwibowoo
